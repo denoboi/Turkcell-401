@@ -8,21 +8,24 @@ public class MoveCamera : MonoBehaviour
     float acceleration;
     float maxSpeed;
 
-    bool movement;
+    bool movement = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(movement)
-        {
-            CameraMove();
-        }
+        speed = 1f;
+        acceleration = 0.2f;
+        maxSpeed = 4f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CameraMove();
+        if (movement)
+        {
+            CameraMove();
+        }
+        
     }
 
     void CameraMove()
