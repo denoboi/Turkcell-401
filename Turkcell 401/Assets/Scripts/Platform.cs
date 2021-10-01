@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour
 
     float randomSpeed;
 
-    bool movement = true;
+    bool movement;
 
     float min, max;
 
