@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 1617620650}
   - component: {fileID: 1617620651}
   m_Layer: 0
-  m_Name: PlatformSpawn
+  m_Name: PlatformPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -751,4 +751,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 2383984433757134756, guid: 599225f9340a2fc4488f9599887d36c6, type: 3}
-  platformDistance: 40
+  platformDistance: 3
