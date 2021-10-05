@@ -11,6 +11,9 @@ public class PlatformPool : MonoBehaviour
     [SerializeField]
     GameObject playerPrefab = default;
 
+    [SerializeField]
+    GameObject deadlyPlatformPrefab = default;
+
     Vector2 platformPos;
     Vector2 playerPos;
 
