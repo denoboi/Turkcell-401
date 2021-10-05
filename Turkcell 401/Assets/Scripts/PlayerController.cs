@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
 
     Vector2 velocity;
+    [SerializeField]
+    float jumpSpeed;
 
     [SerializeField]
     float speed =default;
@@ -61,5 +63,25 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = scale;
         transform.Translate(velocity * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            StopJump();
+        }
+    }
+
+    void Jump()
+    {
+         rb2d.AddForce(new Vector2(0,jumpSpeed), ForceMode2D.Impulse);
+         animator.SetBool("Jump", true);
+    }
+
+    void StopJump()
+    {
+        animator.SetBool("Jump", false);
     }
 }
