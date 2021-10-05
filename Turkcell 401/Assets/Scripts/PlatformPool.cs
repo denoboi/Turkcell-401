@@ -9,9 +9,6 @@ public class PlatformPool : MonoBehaviour
     List<GameObject> platforms = new List<GameObject>();
 
     [SerializeField]
-    GameObject deadlyPlatformPrefab;
-
-    [SerializeField]
     GameObject playerPrefab = default;
 
     Vector2 platformPos;
@@ -59,7 +56,7 @@ public class PlatformPool : MonoBehaviour
         GameObject deadlyPlatform = Instantiate(deadlyPlatformPrefab, platformPos, Quaternion.identity);
         platforms.Add(deadlyPlatform);
         NextPlatformPos();
-    
+
     }
 
 
@@ -87,7 +84,7 @@ public class PlatformPool : MonoBehaviour
     {
         platformPos.y += platformDistance;
         float random = Random.Range(0f, 1f);
-        
+
         if (random < 0.5f)
         {
             platformPos.x = ScreenCalculator.instance.Width / 2;
@@ -95,6 +92,6 @@ public class PlatformPool : MonoBehaviour
         {
             platformPos.x = -ScreenCalculator.instance.Width / 2;
         }
-           
+
     }
 }
