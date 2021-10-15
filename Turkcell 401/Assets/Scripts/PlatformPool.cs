@@ -53,10 +53,11 @@ public class PlatformPool : MonoBehaviour
             GameObject platform = Instantiate(platformPrefab, platformPos, Quaternion.identity);
             platforms.Add(platform);
             platform.GetComponent<Platform>().Movement = true;
-            platform.transform.position = platformPos;
+            //platform.transform.position = platformPos;
             NextPlatformPos();
         }
         GameObject deadlyPlatform = Instantiate(deadlyPlatformPrefab, platformPos, Quaternion.identity);
+        deadlyPlatform.GetComponent<DeadlyPlatform>().Movement = true;
         platforms.Add(deadlyPlatform);
         NextPlatformPos();
 
@@ -65,6 +66,8 @@ public class PlatformPool : MonoBehaviour
 
     void LocatePlatform()
     {
+        //burada dikkat edilmesi gereken ekranda gozukmeyen elemanlari biz uste ekleyecegiz, o da 5 tane
+        //listin ilk 5 elemanin yerini degistirecegiz ve daha sonra bunlari listenin sonuna atacagiz.
         for (int i = 0; i < 5; i++)
         {
             GameObject temp;
